@@ -1,5 +1,12 @@
 local options = {
-  ensure_installed = { "lua-language-server", "pyright", "typescript-language-server", "jdtls" }, -- not an option from mason.nvim
+  ensure_installed = { 
+    "lua-language-server", 
+    "pyright", 
+    "typescript-language-server", 
+    "jdtls",
+    "java-debug-adapter",
+    "java-test"
+  }, -- not an option from mason.nvim
 
   PATH = "skip",
 
