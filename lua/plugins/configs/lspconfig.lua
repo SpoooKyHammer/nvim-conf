@@ -41,9 +41,12 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
+local lspconfig = require('lspconfig')
+
+lspconfig.lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
+  filetypes = {"lua"},
 
   settings = {
     Lua = {
@@ -64,16 +67,10 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
-require("lspconfig").pyright.setup {
+lspconfig.pyright.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   filetypes = {"python"},
-}
-
-require("lspconfig").jdtls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-  filetypes = {"java"},
 }
 
 return M
