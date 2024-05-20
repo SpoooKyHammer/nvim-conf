@@ -4,6 +4,13 @@ local default_plugins = {
 
   "nvim-lua/plenary.nvim",
 
+  -- tool for java devlopment
+  {
+    -- https://github.com/mfussenegger/nvim-jdtls
+    'mfussenegger/nvim-jdtls',
+    ft = 'java', -- Enable only on .java file extensions
+  },
+
   {
     "NvChad/base46",
     branch = "v2.0",
