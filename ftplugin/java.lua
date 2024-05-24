@@ -136,3 +136,6 @@ end
 
 -- This starts a new client & server, or attaches to an existing client & server based on the `root_dir`.
 jdtls.start_or_attach(config)
+
+-- Key-maps
+vim.keymap.set('n', '<leader>ja', '<cmd>lua vim.lsp.buf.code_action()<CR>', {desc = "JDTLS code actions"})
