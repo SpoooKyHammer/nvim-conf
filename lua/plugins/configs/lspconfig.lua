@@ -73,4 +73,10 @@ lspconfig.pyright.setup {
   filetypes = {"python"},
 }
 
+lspconfig.tsserver.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  single_file_support = true
+}
+
 return M
