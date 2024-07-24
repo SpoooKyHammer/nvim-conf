@@ -10,11 +10,11 @@ local workspace_dir = vim.env.HOME .. '/jdtls-workspace/' .. project_name
 
 -- Needed for debugging
 local bundles = {
-  vim.fn.glob(vim.env.HOME .. '/AppData/Local/nvim-data/mason/packages/java-debug-adapter/extension/server/java-debug-adapter/com.microsoft.java.debug.plugin-0.50.0.jar'),
+  vim.fn.glob(vim.env.HOME .. '/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.53.0.jar'),
 }
 
 -- Needed for running/debugging unit tests
-vim.list_extend(bundles, vim.split(vim.fn.glob(vim.env.HOME .. "/AppData/Local/nvim-data/mason/packages/java-test/extension/server/com.microsoft.java.test.plugin-0.40.1.jar", 1), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(vim.env.HOME .. "/.local/share/nvim/mason/packages/java-test/extension/server/org.opentest4j_1.2.0.jar", 1), "\n"))
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -27,16 +27,16 @@ local config = {
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
-    '-javaagent:' .. vim.env.HOME .. '/AppData/Local/nvim-data/mason/packages/jdtls/lombok.jar',
+    '-javaagent:' .. vim.env.HOME .. '/.local/share/nvim/mason/packages/jdtls/lombok.jar',
     '-Xmx4g',
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
     -- Eclipse jdtls location
-    '-jar', vim.env.HOME .. '/AppData/local/nvim-data/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.800.v20240330-1250.jar',
+    '-jar', vim.env.HOME .. '/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar',
     -- TODO Update this to point to the correct jdtls subdirectory for your OS (config_linux, config_mac, config_win, etc)
-    '-configuration', vim.env.HOME .. '/AppData/local/nvim-data/mason/packages/jdtls/config_win',
+    '-configuration', vim.env.HOME .. '/.local/share/nvim/mason/packages/jdtls/config_linux',
     '-data', workspace_dir
   },
 
@@ -49,7 +49,7 @@ local config = {
   settings = {
     java = {
       -- TODO Replace this with the absolute path to your main java version (JDK 17 or higher)
-      home = 'C:/Program Files/Java/jdk-21',
+      home = '/usr/lib/jvm/java-21-openjdk-amd64',
       eclipse = {
         downloadSources = true,
       },
@@ -60,7 +60,7 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-21",
-            path = "C:/Program Files/Java/jdk-21",
+            path = "/usr/lib/jvm/java-21-openjdk-amd64",
           }
         }
       },
