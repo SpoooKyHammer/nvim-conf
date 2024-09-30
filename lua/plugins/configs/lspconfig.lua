@@ -79,4 +79,14 @@ lspconfig.tsserver.setup {
   single_file_support = true
 }
 
+lspconfig.html.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+lspconfig.cssls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
 return M
