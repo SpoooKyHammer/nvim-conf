@@ -89,4 +89,10 @@ lspconfig.cssls.setup {
   capabilities = M.capabilities,
 }
 
+lspconfig.bashls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+
 return M
