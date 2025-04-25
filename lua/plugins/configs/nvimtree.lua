@@ -2,6 +2,7 @@ local options = {
   filters = {
     dotfiles = false,
     exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+    custom = { "mysql_data" }
   },
   disable_netrw = true,
   hijack_netrw = true,
