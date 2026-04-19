@@ -94,5 +94,9 @@ lspconfig.bashls.setup {
   capabilities = M.capabilities,
 }
 
+lspconfig.tailwindcss.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
 
 return M

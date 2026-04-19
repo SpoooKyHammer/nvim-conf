@@ -5,7 +5,8 @@ local options = {
     "typescript-language-server", 
     "jdtls",
     "java-debug-adapter",
-    "java-test"
+    "java-test",
+    "prettier"
   }, -- not an option from mason.nvim
 
   PATH = "skip",
